@@ -5,14 +5,17 @@ struct Login {
   @State timer: number = 0
   @State smsButtonEnabled: boolean = true
 
-
-  SendSMS() {
+  ClickSendSMS() {
+    if (this.timer != 0) {
+      return
+    }
     let time = 60
     this.timer = setInterval(function(){
-      time--
       this.smsButtonText = time.toString() + "秒后重试"
-      if (time <= 1) {
+      time--
+      if (time == 0) {
         clearInterval(this.timer)
+        this.timer = 0
       }
     }.bind(this), 1000)
   }
@@ -76,7 +79,7 @@ struct Login {
           .width('100%')
           .height('100%')
           .enabled(this.smsButtonEnabled)
-          .onClick(() => this.SendSMS())
+          .onClick(() => this.ClickSendSMS())
       }
       .width('100%')
       .height(60)
