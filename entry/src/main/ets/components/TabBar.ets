@@ -41,7 +41,10 @@ export default struct TabBar {
         this.tabBarList,
         (item, index) => {
           Column({ space: 10 }) {
-            Image(this.tabBarIndex === index ? item.selectIcon : item.icon).width(30)
+            Image(this.tabBarIndex === index ? item.selectIcon: item.icon).width(20)
+            Text(item.title)
+              .fontColor(this.tabBarIndex === index ? '#2c2c2c' : '#707070')
+              .fontWeight(this.tabBarIndex === index ? '800' : '300')
           }
           .onClick(() => {
             router.replaceUrl({ url: item.url })
