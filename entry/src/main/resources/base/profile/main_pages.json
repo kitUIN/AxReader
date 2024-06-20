@@ -2,6 +2,9 @@
   "src": [
     "pages/Index",
     "pages/user/User",
-    "pages/cart/Cart"
+    "pages/bookshelf/BookShelf",
+    "pages/kind/Kind",
+    "pages/login/Login",
+    "pages/home/Home"
   ]
 }
