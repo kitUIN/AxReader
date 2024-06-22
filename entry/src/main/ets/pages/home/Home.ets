@@ -1,4 +1,5 @@
 import promptAction from '@ohos.promptAction';
+import router from '@ohos.router';
 import HomeViewModel from '../../api/HomeViewModel';
 import ProList from '../../components/ProList';
 import TabBar from '../../components/TabBar'
@@ -153,6 +154,14 @@ struct Home {
                 .height(80)
               }
             }.recommendItemStyle()
+            .onClick(() => {
+              router.pushUrl({
+                url: 'pages/detail/Detail',
+                params: {
+                  id: item.id
+                }
+              })
+            })
           },
           item => item.id
         )

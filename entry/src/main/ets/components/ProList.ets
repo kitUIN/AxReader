@@ -54,7 +54,6 @@ export default struct ProList {
             .width('100%')
             .backgroundColor('#fff')
             .onClick(() => {
-              // 编程式跳转
               router.pushUrl({
                 url: 'pages/detail/Detail',
                 params: {
