@@ -10,9 +10,7 @@ export default class Constants {
 
   // 请求首页轮播图数据接口
   static readonly GET_BANNER_LIST: string = '/home/swiper'
-
   static readonly LOGIN: string = '/login'
-
   static readonly GET_BOOK_LIST: string = '/home/more'
 
   // 请求首页产品列表数据接口
@@ -20,6 +18,7 @@ export default class Constants {
   // 请求分类页每一个分类行(两个分类)
   static readonly GET_CART_LINE_LIST: string = '/cart/cart_list'
 
+  static readonly GET_DETAIL: string = '/detail/detail'
   // 请求书架页图书信息
   static readonly GET_BOOKS_ON_BOOKSHELF: string = '/bookshelf/books'
   // 页码

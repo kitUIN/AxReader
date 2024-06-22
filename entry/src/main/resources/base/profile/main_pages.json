@@ -5,6 +5,7 @@
     "pages/bookshelf/BookShelf",
     "pages/cart/Cart",
     "pages/login/Login",
-    "pages/home/Home"
+    "pages/home/Home",
+    "pages/detail/Detail"
   ]
 }
