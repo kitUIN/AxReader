@@ -104,7 +104,7 @@ struct Detail {
             .padding({ top: 20, left: 10, right: 10 })
             .borderRadius({ topLeft: 20, topRight: 20 })
             .backgroundColor('#ffffff')
-            .height('74%')
+            .height('80%')
             .width('100%')
             .alignItems(HorizontalAlign.Start)
           }.margin({ top: 30 })
