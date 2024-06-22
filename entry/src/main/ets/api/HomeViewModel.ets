@@ -46,6 +46,25 @@ class HomeViewModel {
 
     })
   }
+  getProList (count: number = 1) { // 此函数需要传递一个参数，此参数的默认值为1
+    return new Promise((resolve, reject)=> {
+      // 只请求4条数据 ?limitNum=4
+      let url = `${Constants.BASE_URL}${Constants.GET_BOOK_LIST}?num=${count}`
+
+      httpRequestGet(url).then((res: ResponseResult) => { // 请求到了数据
+        if (res.code === Constants.HTTP_CODE_200) {
+          // 请求成功  ---- 告诉页面继续使用数据
+          resolve(res.data)
+        } else {
+          // 获取数据失败
+          reject('网络加载失败')
+        }
+      }).catch((err: Error) => {
+        reject('网络请求失败，请稍后再试')
+      })
+
+    })
+  }
 }
 // 生成类的实例
 const homeViewModel = new HomeViewModel()
