@@ -30,7 +30,15 @@ struct Cart {
           Row() {
             Text("分类")
           }.width("100%").height(50).backgroundColor("#fff").justifyContent(FlexAlign.Center);
-
+/*
+    * ForEach(CartList, item=> {
+    *   Row() {
+    *     一个item代表一行的分类,
+    *     一行有两个分类,
+    *     每一个分类有一个img, url, name, describe
+    *   }
+    * })
+ */
           Row() { // 元素换成图片
             Row() {
 
