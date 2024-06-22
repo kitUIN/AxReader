@@ -139,6 +139,7 @@ struct Login {
                   message: res.msg,
                   duration: 1000
                 })
+                this.isLogin = 'true';
                 this.jumpToHome()
               } else {
                 promptAction.showToast({
