@@ -1,6 +1,6 @@
 export default class Constants {
   // 数据请求的基本地址
-  static readonly BASE_URL: string = 'http://127.0.0.1:3126/api'
+  static readonly BASE_URL: string = 'http://nacho.kituin.fun:3126/api'
 
   // 请求超时时间
   static readonly HTTP_READ_TIMEOUT: number = 10000
