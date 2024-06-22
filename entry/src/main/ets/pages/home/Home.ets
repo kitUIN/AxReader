@@ -6,6 +6,8 @@ import TabBar from '../../components/TabBar'
 import { Banner } from '../../model/Banner';
 import { Book } from '../../model/Book';
 import { NavItemType } from '../../model/NavItem';
+import { StateIcon } from '../../model/StateIcon';
+import tabBarList from '../../model/TabBarList';
 
 @Extend(Column) function fullColumnContainer() {
   .width('100%')
@@ -170,6 +172,9 @@ struct Home {
 
   }
 
+  tabBarIndex: number = 1;
+  @State tabBarIcon: StateIcon = new StateIcon(tabBarList[this.tabBarIndex].selectIcon)
+
   build() {
     Column() {
       Column() {
@@ -182,6 +187,11 @@ struct Home {
           }.layoutColumnContainer()
         }.onScroll(() => {
           this.scrollTop = this.scroller.currentOffset().yOffset
+          if (this.scrollTop > 0) {
+            this.tabBarIcon.src = $rawfile("home/TOP.png")
+          } else if(this.scrollTop == 0) {
+            this.tabBarIcon.src = tabBarList[1].selectIcon
+          }
         })
         .onScrollEdge((value) => {
           if (value === 2) {
@@ -200,7 +210,27 @@ struct Home {
         })
       }.layoutColumnContainer()
 
-      TabBar({ tabBarIndex: 1 })
+      Flex({ justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center }) {
+        ForEach(
+          tabBarList,
+          (item, index) => {
+            Column({ space: 10 }) {
+              Image(this.tabBarIndex === index ? this.tabBarIcon.src : item.icon).width(20)
+              Text(item.title)
+                .fontColor(this.tabBarIndex === index ? '#2c2c2c' : '#707070')
+                .fontWeight(this.tabBarIndex === index ? '800' : '300')
+            }
+            .onClick(() => {
+              if(router.getState().name === 'Home'){
+                this.scroller.scrollEdge(Edge.Top)
+              }else{
+                router.replaceUrl({ url: item.url })
+              }
+            })
+          },
+          item => item.title
+        )
+      }.width('100%').height(80).backgroundColor('#fff')
     }
 
     .fullColumnContainer()

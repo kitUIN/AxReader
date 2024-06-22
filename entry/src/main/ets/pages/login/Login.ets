@@ -133,6 +133,20 @@ struct Login {
           .height(50)
           .backgroundColor('#666666')
           .onClick(() => {
+            if (this.phone === ''){
+              promptAction.showToast({
+                message: '请输入手机号',
+                duration: 1000
+              })
+              return
+            }
+            if (this.code === ''){
+              promptAction.showToast({
+                message: '请输入验证码',
+                duration: 1000
+              })
+              return
+            }
             LoginViewModel.login(this.phone,this.code).then((res:ResponseResult)=>{
               if (res.code === Constants.HTTP_CODE_200) {
                 promptAction.showToast({
