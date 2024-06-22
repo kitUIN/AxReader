@@ -1,5 +1,5 @@
 export default class ResponseResult {
   code: number
-  message: string
+  msg: string
   data: any
 }

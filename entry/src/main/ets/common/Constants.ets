@@ -11,6 +11,8 @@ export default class Constants {
   // 请求首页轮播图数据接口
   static readonly GET_BANNER_LIST: string = '/home/swiper'
 
+  static readonly LOGIN: string = '/login'
+
   static readonly GET_BOOK_LIST: string = '/home/more'
 
   // 请求首页产品列表数据接口

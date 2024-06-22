@@ -33,14 +33,14 @@ function httpRequest <T> (url: string, method: http.RequestMethod, params?: T): 
       const result = `${value.result}`
       const resultJson: ResponseResult = JSON.parse(result)
       serverData.code = resultJson.code
-      serverData.message = resultJson.message
+      serverData.msg = resultJson.msg
       serverData.data = resultJson.data
     } else {
-      serverData.message = '网络请求失败，请稍后再试'
+      serverData.msg = '网络请求失败，请稍后再试'
     }
     return serverData
   }).catch(() => {
-    serverData.message = '网络请求失败，请稍后再试'
+    serverData.msg = '网络请求失败，请稍后再试'
     return serverData
   })
 }
