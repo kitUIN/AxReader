@@ -191,7 +191,7 @@ struct Home {
         })
       }.layoutColumnContainer()
 
-      TabBar({ tabBarIndex: 1 })
+      // TabBar({ tabBarIndex: 1 })
     }
 
     .fullColumnContainer()

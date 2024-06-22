@@ -3,7 +3,7 @@
     "pages/Index",
     "pages/user/User",
     "pages/bookshelf/BookShelf",
-    "pages/kind/Kind",
+    "pages/cart/Cart",
     "pages/login/Login",
     "pages/home/Home"
   ]

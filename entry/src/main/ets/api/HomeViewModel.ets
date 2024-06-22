@@ -65,6 +65,39 @@ class HomeViewModel {
 
     })
   }
+
+  // GET 请求 '/cart/cart_list'
+  getCartLineList () {
+    return new Promise((resolve, reject) => {
+      let url = `${Constants.BASE_URL}${Constants.GET_CART_LINE_LIST}`
+      httpRequestGet(url).then((res: ResponseResult) => {
+        if (res.code == Constants.HTTP_CODE_200) {
+          resolve(res.data)
+        } else {
+          // 获取数据失败
+          reject('网络加载失败')
+        }
+      }).catch((err: Error) => {
+        reject('网络请求失败，请稍后再试')
+      })
+    })
+  }
+
+  getBooksOnBookShelf() {
+    return new Promise((resolve, reject) => {
+      let url = `${Constants.BASE_URL}${Constants.GET_BOOKS_ON_BOOKSHELF}`
+      httpRequestGet(url).then((res: ResponseResult) => {
+        if (res.code == Constants.HTTP_CODE_200) {
+          resolve(res.data)
+        } else {
+          // 获取数据失败
+          reject('网络加载失败')
+        }
+      }).catch((err: Error) => {
+        reject('网络请求失败，请稍后再试')
+      })
+    })
+  }
 }
 // 生成类的实例
 const homeViewModel = new HomeViewModel()

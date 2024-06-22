@@ -50,7 +50,7 @@ struct User {
       }.height(300).backgroundColor('#f2f2f2').width("100%").alignItems(HorizontalAlign.Start)
       Column()
       .layoutColumnContainer()
-      TabBar({ tabBarIndex: 4 })
+      // TabBar({ tabBarIndex: 3 })
     }.fullColumnContainer().backgroundColor("#f2f2f2")
   }
 }

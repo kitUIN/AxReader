@@ -21,7 +21,7 @@ export default struct TabBar {
     },
     {
       title: '分类',
-      url: 'pages/kind/Kind',
+      url: 'pages/cart/Cart',
       icon: $rawfile('tabBar/kind.png'),
       selectIcon: $rawfile('tabBar/kind_active.png')
     },

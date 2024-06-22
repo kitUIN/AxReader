@@ -17,7 +17,11 @@ export default class Constants {
 
   // 请求首页产品列表数据接口
   static readonly GET_RECOMMEND: string = '/home/recommend'
+  // 请求分类页每一个分类行(两个分类)
+  static readonly GET_CART_LINE_LIST: string = '/cart/cart_list'
 
+  // 请求书架页图书信息
+  static readonly GET_BOOKS_ON_BOOKSHELF: string = '/bookshelf/books'
   // 页码
   static readonly COUNT: number = 1
 
