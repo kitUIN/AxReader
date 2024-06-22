@@ -189,7 +189,7 @@ struct Home {
           this.scrollTop = this.scroller.currentOffset().yOffset
           if (this.scrollTop > 0) {
             this.tabBarIcon.src = $rawfile("home/TOP.png")
-          } else if(this.scrollTop == 0) {
+          } else if (this.scrollTop == 0) {
             this.tabBarIcon.src = tabBarList[1].selectIcon
           }
         })
@@ -221,9 +221,9 @@ struct Home {
                 .fontWeight(this.tabBarIndex === index ? '800' : '300')
             }
             .onClick(() => {
-              if(router.getState().name === 'Home'){
+              if (item.url === tabBarList[this.tabBarIndex].url) {
                 this.scroller.scrollEdge(Edge.Top)
-              }else{
+              } else {
                 router.replaceUrl({ url: item.url })
               }
             })
