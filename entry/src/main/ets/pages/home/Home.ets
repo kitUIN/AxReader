@@ -61,10 +61,11 @@ import tabBarList from '../../model/TabBarList';
 
 
 @Extend(Swiper) function swiperStyle() {
-  .width('100%')
+  .width('94%')
   .height(150)
   .borderRadius(20)
   .padding({ top: 10 })
+  .margin({ left: '3%' })
 }
 
 @Styles function bannerBox() {
