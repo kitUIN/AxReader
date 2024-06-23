@@ -2,7 +2,7 @@
 @Component
 export default struct BookDetailBox {
   @Link title: string
-  sub: string
+  @Prop sub: string
 
   build() {
     Column(){

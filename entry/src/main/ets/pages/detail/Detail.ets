@@ -17,7 +17,7 @@ struct Detail {
   @State tags: string[] = [] // 轮播图
   @State serialCount: string = '' // 章节数
   @State lastChapter: string = '' // 最后更新
-  @State updateStatus: boolean = false // 是否连载
+  @State updateStatus: boolean = true // 是否连载
 
   aboutToAppear() {
     DetailViewModel.getProDetail(this.bookId).then(res => {
@@ -117,8 +117,8 @@ struct Detail {
 
       Row() {
         Row({ space: 4 }) {
-          Image($r('app.media.add_bookshelf')).width(14)
-          Text('加入书架').fontSize(12).fontColor('#515151')
+          Image($r('app.media.add_bookshelf')).width(16)
+          Text('加入书架').fontSize(14).fontColor('#515151')
         }
         .padding({ left: 4, right: 4 })
         .width(80)
@@ -127,17 +127,18 @@ struct Detail {
         .justifyContent(FlexAlign.Center)
 
         Column() {
-          Text('听书').fontSize(14).fontColor('#e9575e')
+          Text('听书').fontSize(15).fontColor('#e9575e')
         }
         .height(34)
         .width(100)
+        .margin({left:20})
         .alignItems(HorizontalAlign.Center)
         .justifyContent(FlexAlign.Center)
         .border({ radius: 20 })
         .backgroundColor('#FFE7E7')
 
         Column() {
-          Text('立即阅读').fontSize(15).fontColor('#ffffff')
+          Text('立即阅读').fontSize(16).fontColor('#ffffff')
         }
         .height(34)
         .width(120)
