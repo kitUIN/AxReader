@@ -59,7 +59,7 @@ struct BookShelf {
                   // Text().fontSize(18).textAlign(TextAlign.Center)
                   //   .fontColor("#515151")
                 }.width("33%").height(150)
-              }.width("90%")
+              }.width("90%").margin({top:10})
             }
           }
         }

@@ -54,7 +54,7 @@ struct Cart {
                 ForEach(this.cartList, item => {
                   // Column() {
                     Row({space: 20}) {
-                      Row() {
+                      Row({space: 10}) {
                         Text(item.name).fontSize(20)
                         Image(item.img).height(50)
                         // Text(item.describe)
